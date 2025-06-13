@@ -1,0 +1,27 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#2563eb" stroke="#1e40af" stroke-width="8"/>
+  
+  <!-- Book/Document icon -->
+  <rect x="150" y="120" width="212" height="280" rx="12" fill="#ffffff"/>
+  <rect x="150" y="120" width="212" height="60" rx="12" fill="#3b82f6"/>
+  
+  <!-- Lines representing text -->
+  <rect x="180" y="210" width="152" height="8" rx="4" fill="#e5e7eb"/>
+  <rect x="180" y="235" width="120" height="8" rx="4" fill="#e5e7eb"/>
+  <rect x="180" y="260" width="140" height="8" rx="4" fill="#e5e7eb"/>
+  <rect x="180" y="285" width="100" height="8" rx="4" fill="#e5e7eb"/>
+  
+  <!-- Pencil icon -->
+  <g transform="translate(280, 280)">
+    <rect x="0" y="15" width="60" height="12" rx="6" fill="#fbbf24" transform="rotate(45)"/>
+    <circle cx="8" cy="8" r="8" fill="#f59e0b"/>
+    <path d="M15 15 L35 35 L40 30 L20 10 Z" fill="#6b7280"/>
+  </g>
+  
+  <!-- Checkmark -->
+  <g transform="translate(320, 140)">
+    <circle cx="15" cy="15" r="15" fill="#10b981"/>
+    <path d="M8 15 L12 19 L22 9" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg> 

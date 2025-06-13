@@ -1,5 +1,10 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { useEffect } from "react"
+import { useState } from "react"
+import { useSession } from "next-auth/react"
+import { Homework } from "@/lib/generated/prisma"
 
 const mockData = [
   { id: 1, student: "John Doe", subject: "Math", title: "Algebra Homework", submittedDate: "2024-02-28" },
@@ -8,6 +13,16 @@ const mockData = [
 ]
 
 export default function PendingReviewsPage() {
+  const { data: session } = useSession()
+  const [homeworks, setHomeworks] = useState<Homework[]>([])
+  useEffect(() => {
+    const fetchHomeworks = async () => {
+      const response = await fetch(`/api/homework?studentId=${session?.user?.id}`)
+      const data = await response.json()
+      setHomeworks(data)
+    }
+    fetchHomeworks()
+  }, [session])
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-6">Pending Reviews</h1>
@@ -22,10 +37,10 @@ export default function PendingReviewsPage() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {mockData.map((item) => (
+          {homeworks.map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{item.student}</TableCell>
-              <TableCell>{item.subject}</TableCell>
+              <TableCell>{item.student.name}</TableCell>
+              <TableCell>{item.subject.name}</TableCell>
               <TableCell>{item.title}</TableCell>
               <TableCell>{item.submittedDate}</TableCell>
               <TableCell>

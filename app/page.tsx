@@ -13,15 +13,6 @@ export default function LandingPage() {
           <span className="sr-only">Homework Approval System</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
-            Features
-          </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#demo">
-            Demo
-          </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#about">
-            About
-          </Link>
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="/login">
             Login
           </Link>
@@ -46,72 +37,9 @@ export default function LandingPage() {
                 <Button asChild>
                   <Link href="/login">Get Started</Link>
                 </Button>
-                <Button variant="outline" asChild>
-                  <Link href="#features">Learn More</Link>
-                </Button>
+
               </div>
             </div>
-          </div>
-        </section>
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
-              Key Features
-            </h2>
-            <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Easy Submission</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  Students can easily submit their homework digitally through a user-friendly interface.
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Efficient Review</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  Teachers can quickly review, evaluate, and approve or reject submitted homework.
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Insightful Analytics</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  Access detailed statistics and analysis to track student progress and performance.
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-        <section id="demo" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
-              See It in Action
-            </h2>
-            <div className="flex justify-center">
-              <Card className="w-full max-w-2xl">
-                <CardHeader>
-                  <CardTitle>Homework Submission Demo</CardTitle>
-                  <CardDescription>Experience the simplicity of our homework submission process.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <HomeworkSubmissionDemo />
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">About Us</h2>
-            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 text-center">
-              We're dedicated to improving the educational process through innovative digital solutions. Our Homework
-              Approval System is designed to meet the needs of modern educational institutions, teachers, and students,
-              streamlining the homework process and enhancing learning outcomes.
-            </p>
           </div>
         </section>
       </main>

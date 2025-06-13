@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -10,19 +9,33 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { toast } from "sonner"
 
 export default function RegisterPage() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [role, setRole] = useState("student")
+  const [role, setRole] = useState("STUDENT")
   const router = useRouter()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically handle the registration logic
-    // For this demo, we'll just redirect to the dashboard
-    router.push("/dashboard")
+    
+    const response = await fetch("/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password, role }),
+    })
+    
+    if (response.ok) {
+      toast.success("User registered successfully")
+      router.push("/login")
+    } else {
+      const errorData = await response.json()
+      toast.error(errorData.message || "Failed to register user")
+    }
   }
 
   return (
@@ -73,8 +86,8 @@ export default function RegisterPage() {
                   <SelectValue placeholder="Select your role" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="student">Student</SelectItem>
-                  <SelectItem value="teacher">Teacher</SelectItem>
+                  <SelectItem value="STUDENT">Student</SelectItem>
+                  <SelectItem value="TEACHER">Teacher</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -93,4 +106,3 @@ export default function RegisterPage() {
     </div>
   )
 }
-
