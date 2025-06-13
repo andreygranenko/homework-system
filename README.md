@@ -215,13 +215,6 @@ docker build -t homework-system .
 docker run -p 3000:3000 homework-system
 ```
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📋 Project Structure
 
@@ -239,59 +232,3 @@ homework-system/
 └── scripts/              # Database seeding scripts
 ```
 
-## 🔒 Security Features
-
-- **Password Hashing**: bcryptjs for secure password storage
-- **Session Management**: NextAuth.js with secure cookies
-- **Input Validation**: Server-side and client-side validation
-- **SQL Injection Prevention**: Prisma ORM with parameterized queries
-- **XSS Protection**: React's built-in XSS prevention
-
-## 📊 Performance Optimizations
-
-- **Database Connection Pooling**: Singleton Prisma client
-- **React Optimization**: useMemo and useCallback hooks
-- **Code Splitting**: Next.js automatic code splitting
-- **Static Generation**: ISR for improved performance
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **Database Connection Error**
-   - Check DATABASE_URL in .env.local
-   - Ensure PostgreSQL is running
-   - Verify database credentials
-
-2. **Authentication Issues**
-   - Check NEXTAUTH_SECRET is set
-   - Verify NEXTAUTH_URL matches your domain
-
-3. **Build Errors**
-   - Run `npm install` to update dependencies
-   - Check for TypeScript errors
-   - Ensure all environment variables are set
-
-## 📞 Support
-
-For support and questions:
-
-- Create an issue on GitHub
-- Check the documentation
-- Review the troubleshooting section
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Next.js Team** for the amazing React framework
-- **Prisma Team** for the excellent ORM
-- **Vercel** for hosting and deployment solutions
-- **Shadcn** for beautiful UI components
-- **Open Source Community** for invaluable resources and inspiration
-
----
-
-**Built with ❤️ using modern web technologies**
